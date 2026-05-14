@@ -113,17 +113,99 @@ Futuramente a aplicação será migrada para uma arquitetura mais robusta basead
 
 # 📂 Estrutura do Projeto
 
-```txt
-src/main/java/com/backendforge
+# 📂 Estrutura do Back-End
 
-├── config
-├── controller
-├── dto
-│   ├── request
-│   └── response
-├── entity
-├── enums
-├── repository
-├── security
-├── service
-└── exception
+```txt
+src
+└── main
+    ├── java
+    │   └── com
+    │       └── backendforge
+    │
+    │           ├── config
+    │           │   ├── SecurityConfig.java
+    │           │   ├── SwaggerConfig.java
+    │           │   └── RabbitMQConfig.java
+    │           │
+    │           ├── controller
+    │           │   ├── AuthController.java
+    │           │   ├── UserController.java
+    │           │   └── ProjectController.java
+    │           │
+    │           ├── dto
+    │           │   ├── request
+    │           │   │   ├── LoginRequest.java
+    │           │   │   ├── RegisterRequest.java
+    │           │   │   ├── GenerateProjectRequest.java
+    │           │   │   └── ForgotPasswordRequest.java
+    │           │   │
+    │           │   └── response
+    │           │       ├── AuthResponse.java
+    │           │       ├── UserResponse.java
+    │           │       ├── ProjectResponse.java
+    │           │       └── ErrorResponse.java
+    │           │
+    │           ├── entity
+    │           │   ├── User.java
+    │           │   ├── GeneratedProject.java
+    │           │   ├── PasswordResetToken.java
+    │           │   └── UserFavoriteProject.java
+    │           │
+    │           ├── enums
+    │           │   ├── Role.java
+    │           │   ├── AuthProvider.java
+    │           │   ├── ProjectDifficulty.java
+    │           │   └── ProjectStatus.java
+    │           │
+    │           ├── exception
+    │           │   ├── GlobalExceptionHandler.java
+    │           │   ├── BusinessException.java
+    │           │   ├── ResourceNotFoundException.java
+    │           │   └── UnauthorizedException.java
+    │           │
+    │           ├── repository
+    │           │   ├── UserRepository.java
+    │           │   ├── ProjectRepository.java
+    │           │   └── PasswordResetTokenRepository.java
+    │           │
+    │           ├── security
+    │           │   ├── JwtAuthenticationFilter.java
+    │           │   ├── JwtService.java
+    │           │   ├── UserDetailsServiceImpl.java
+    │           │   └── OAuth2LoginSuccessHandler.java
+    │           │
+    │           ├── service
+    │           │   ├── AuthService.java
+    │           │   ├── UserService.java
+    │           │   ├── ProjectGenerationService.java
+    │           │   ├── EmailService.java
+    │           │   ├── RabbitMQProducerService.java
+    │           │   └── PasswordRecoveryService.java
+    │           │
+    │           ├── consumer
+    │           │   ├── EmailConsumer.java
+    │           │   └── AIProjectConsumer.java
+    │           │
+    │           ├── producer
+    │           │   ├── EmailProducer.java
+    │           │   └── AIProjectProducer.java
+    │           │
+    │           ├── mapper
+    │           │   ├── UserMapper.java
+    │           │   └── ProjectMapper.java
+    │           │
+    │           ├── client
+    │           │   └── AIClient.java
+    │           │
+    │           └── BackendForgeApplication.java
+    │
+    └── resources
+        ├── db
+        │   └── migration
+        │       ├── V1__create_users_table.sql
+        │       ├── V2__create_projects_table.sql
+        │       └── V3__create_password_reset_table.sql
+        │
+        ├── application.yml
+        └── application-dev.yml
+```
