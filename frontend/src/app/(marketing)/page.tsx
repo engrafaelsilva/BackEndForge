@@ -79,17 +79,7 @@ export default function LandingPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left */}
             <div>
-              <FadeIn delay={0}>
-                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-forge-border bg-forge-card px-4 py-1.5">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-forge-success opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-forge-success" />
-                  </span>
-                  <span className="text-xs font-medium text-forge-text-secondary">
-                    Plataforma em desenvolvimento ativo
-                  </span>
-                </div>
-              </FadeIn>
+
 
               <FadeIn delay={0.1}>
                 <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-forge-text sm:text-5xl lg:text-[3.5rem]">
