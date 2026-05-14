@@ -1,0 +1,57 @@
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: backendforge-postgres
+
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    networks:
+      - backendforge-network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: backendforge-rabbitmq
+
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+    networks:
+      - backendforge-network
+
+  backend:
+    build: .
+    container_name: backendforge-api
+
+    depends_on:
+      - postgres
+      - rabbitmq
+
+    ports:
+      - "8080:8080"
+
+    env_file:
+      - .env
+
+    networks:
+      - backendforge-network
+
+volumes:
+  postgres_data:
+
+networks:
+  backendforge-network:
