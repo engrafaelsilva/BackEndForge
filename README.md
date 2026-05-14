@@ -207,5 +207,4 @@ src
         │       └── V3__create_password_reset_table.sql
         │
         ├── application.yml
-        └── application-dev.yml
 ```
