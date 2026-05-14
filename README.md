@@ -9,20 +9,22 @@ A aplicação utiliza Inteligência Artificial para gerar sugestões personaliza
 # 📸 Preview da Aplicação
 
 ## 🏠 Home Page
-
-![Home](./docs/images/home.png)
+![Home](./docs/images/home-page.png)
 
 ---
 
 ## 🤖 Geração de Projetos com IA
-
-![Generate Project](./docs/images/generate-project.png)
+![Generate Project](./docs/images/geracao-projeto.png)
 
 ---
 
 ## 🗺️ Roadmap Inteligente
+![Roadmap](./docs/images/roadmaps.png)
 
-![Roadmap](./docs/images/roadmap.png)
+---
+
+## 📊 Dashboard do Usuário
+![Dashboard](./docs/images/deashboard-user.png)
 
 ---
 
